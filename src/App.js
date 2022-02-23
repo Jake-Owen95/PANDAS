@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
+import "./App.css";
 import Pandas from './components/pandas';
+
+
     class App extends Component {
       state = {
-        pandas: []  
+        pandas: []
       }
+      
+      
       componentDidMount() {
+        
         fetch('https://staging.mygrow.me/wp-json/mygrow/v1/get-pandas/')
         .then(res => res.json())
         .then((data) => {
@@ -15,8 +21,9 @@ import Pandas from './components/pandas';
      
       render() {
         return (
+          
           <Pandas pandas={this.state.pandas}/>
-  
+          
         );
       }
     }
